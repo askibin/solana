@@ -179,6 +179,13 @@ pub struct BpfComputeBudget {
     pub cpi_bytes_per_unit: u64,
     /// Base number of compute units consumed to get a sysvar
     pub sysvar_base_cost: u64,
+<<<<<<< HEAD
+=======
+    /// Number of compute units consumed to call secp256k1_recover
+    pub secp256k1_recover_cost: u64,
+    /// Optional program heap region size, if `None` then loader default
+    pub heap_size: Option<usize>,
+>>>>>>> 286758498 (Bump compute budget for neon evm (#17700))
 }
 impl Default for BpfComputeBudget {
     fn default() -> Self {
@@ -202,6 +209,11 @@ impl BpfComputeBudget {
             max_cpi_instruction_size: 1280, // IPv6 Min MTU size
             cpi_bytes_per_unit: 250,        // ~50MB at 200,000 units
             sysvar_base_cost: 100,
+<<<<<<< HEAD
+=======
+            secp256k1_recover_cost: 25_000,
+            heap_size: None,
+>>>>>>> 286758498 (Bump compute budget for neon evm (#17700))
         }
     }
 }
